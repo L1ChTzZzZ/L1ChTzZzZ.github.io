@@ -1,0 +1,425 @@
+/* --- MOBILE FIRST --- */
+
+/* Reset y básicos */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    background: #fff;
+    color: #444;
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #f2f2f2; /* gris claro */
+    position: relative;
+    border-bottom: 2px solid #e57000; /* naranja PwC */
+}
+
+.logo {
+    height: 45px;
+    width: auto;
+}
+
+/* MENU TOGGLE (checkbox oculto) */
+#menu-toggle {
+    display: none;
+}
+
+.menu-toggle-label {
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+    color: #e57000; /* naranja PwC */
+}
+
+/* MENU */
+.menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 2px solid #e57000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 1000;
+}
+
+#menu-toggle:checked + .menu-toggle-label + .menu {
+    max-height: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items li {
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-items li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.25s ease;
+}
+
+.menu-items li a:hover {
+    background-color: #e57000;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Iconos menú */
+.menu-items li a img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+/* MAIN */
+main {
+    min-height: 85vh; /* Más altura */
+    padding: 20px 15px;
+    text-align: center;
+    display: flex; /* Centrado */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Fondo doble: degradado + imagen */
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://i.pinimg.com/originals/67/d4/ca/67d4cac7521a3dcc36091aa5dc2c6fe2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    color: #333; /* Contraste legible */
+}
+
+main h2 {
+    font-size: 26px;
+    color: #e57000;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra al título */
+    text-align: center;
+}
+
+main p {
+    font-size: 17px;
+    margin-bottom: 18px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra al párrafo */
+}
+
+main button {
+    background-color: #e57000;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    text-align: center;
+}
+
+main button:hover {
+    background-color: #4784e6;
+}
+
+main button img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+main div {
+    transition: transform 0.3s ease;
+}
+
+main div:hover {
+    transform: translateY(-6px);
+}
+
+.servicios-section {
+    padding: 20px 15px; /* Espaciado interno */
+    text-align: center; /* Alineación centrada */
+    background-color: #f9f9f9; /* Fondo claro para la sección */
+}
+
+.servicios-section h2 {
+    font-size: 22px; /* Tamaño de fuente del título */
+    color: #e57000; /* Color del título */
+    margin-bottom: 15px; /* Margen inferior */
+    font-weight: 700; /* Peso de la fuente */
+}
+
+/* GALERÍA DE SERVICIOS */
+.image-gallery {
+    padding: 15px 10px 30px; /* Ajusta padding para móvil */
+}
+
+.cards-container {
+    display: flex; /* Usar flexbox para la galería */
+    flex-direction: column; /* Colocar tarjetas en columna en móviles */
+    align-items: center; /* Centra horizontalmente en móvil */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Tarjetas de servicios */
+.card {
+    width: 100%; /* Ancho completo en móvil */
+    max-width: 300px; /* Evita que se vea muy ancha en móvil */
+    background: #fff; /* Fondo blanco para las tarjetas */
+    padding: 15px; /* Espaciado interno */
+    text-align: center; /* Alineación centrada del texto */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover en tarjetas */
+.card:hover {
+    background-color: #e57000; /* Color de fondo al pasar el cursor */
+    color: white; /* Color del texto al pasar el cursor */
+    transform: translateY(-4px); /* Efecto de elevación */
+}
+
+/* Imagen de la tarjeta */
+.card img {
+    width: 100%; /* Ancho completo de la imagen */
+    height: auto; /* Mantener proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados en la imagen */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+/* Título de la tarjeta */
+.card h3 {
+    margin: 12px 0 10px; /* Margen alrededor del título */
+    font-size: 18px; /* Tamaño de fuente del título */
+    color: #e57000; /* Color del título */
+    font-weight: 700; /* Peso de la fuente */
+}
+
+/* Enlace de la tarjeta */
+.a1 {
+    text-decoration: none; /* Sin subrayado */
+}
+/* FOOTER */
+.footer-corporativo {
+    background-color: #f9f9f9;
+    padding: 28px 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-top-redes p {
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los iconos */
+    gap: 14px;
+}
+
+.social-icons a img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: translateY(-6px);
+}
+
+/* Footer columnas */
+.footer-main {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #e57000;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #444;
+    transition: color 0.25s ease;
+    font-weight: 600;
+}
+
+.footer-column ul li a:hover {
+    color: #e57000;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 15px;
+    background-color: #f5f5f5;
+    color: #333;
+    gap: 18px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a {
+    color: #e57000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- MEDIA QUERY PARA DESKTOP --- */
+@media (min-width: 768px) {
+    header {
+        padding: 15px 40px;
+    }
+
+    .menu-toggle-label {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        max-height: none !important;
+        box-shadow: none;
+        background: none;
+        width: auto;
+    }
+
+    .menu-items {
+        display: flex;
+        gap: 28px;
+    }
+
+    .menu-items li {
+        border: none;
+    }
+
+    .menu-items li a {
+        padding: 10px 0;
+        font-size: 16px;
+        color: #444;
+    }
+
+    .menu-items li a:hover {
+        background: none;
+        color: #e57000;
+        border-radius: 0;
+    }
+
+    main {
+        padding: 40px 80px;
+        text-align: left;
+        min-height: 95vh;
+    }
+
+    .cards-container {
+        flex-direction: row; /* Cambia a fila en pantallas más grandes */
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .card {
+        width: calc(33.333% - 20px); /* Tres columnas en desktop */
+    }
+
+    .footer-main {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+/* --- MEDIA QUERY PARA DESKTOP --- */
+@media (min-width: 768px) {
+    .cards-container {
+        flex-direction: row; /* Cambiar a fila en pantallas más grandes */
+        flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan */
+        justify-content: center; /* Centrar las tarjetas */
+        gap: 30px; /* Espacio entre tarjetas */
+    }
+
+    .card {
+        width: calc(33.333% - 20px); /* Ancho de las tarjetas en pantallas grandes */
+    }
+} }

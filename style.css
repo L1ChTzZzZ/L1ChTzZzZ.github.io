@@ -1,0 +1,545 @@
+/* ==================================================
+   RESET & CONFIGURACIÓN BÁSICA
+   ================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    background: #fff;
+    color: #ffffff; /* IMPORTANTE: Este valor por defecto es blanco, pero en secciones como .noticias también se usa texto blanco, revisar si se requiere */
+    text-decoration: none;
+}
+
+/* ==================================================
+   HEADER / MENÚ RESPONSIVO
+   ================================================== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #f2f2f2;
+    position: relative;
+    border-bottom: 2px solid #e57000;
+}
+
+.logo {
+    height: 45px;
+    width: auto;
+}
+
+/* ----- Menú toggle móvil ----- */
+#menu-toggle {
+    display: none;
+}
+
+.menu-toggle-label {
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+    color: #e57000;
+}
+
+/* ----- Menú desplegable móvil ----- */
+.menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 2px solid #e57000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 1000;
+}
+
+#menu-toggle:checked + .menu-toggle-label + .menu {
+    max-height: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items li {
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-items li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.25s ease;
+}
+
+.menu-items li a:hover {
+    background-color: #e57000;
+    color: white;
+    border-radius: 4px;
+}
+
+.menu-items li a img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+/* ==================================================
+   MAIN: Sección principal con fondo e intro
+   ================================================== */
+main {
+    min-height: 85vh;
+    padding: 20px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Fondo con imagen + superposición oscura */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(https://i.pinimg.com/originals/67/d4/ca/67d4cac7521a3dcc36091aa5dc2c6fe2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    color: #333;
+}
+
+main h2 {
+    font-size: 26px;
+    color: #e57000;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+main p {
+    font-size: 17px;
+    margin-bottom: 18px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+main button {
+    background-color: #e57000;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+main button:hover {
+    background-color: #4784e6;
+}
+
+main button img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+main div {
+    transition: transform 0.3s ease;
+}
+
+main div:hover {
+    transform: translateY(-6px);
+}
+
+/* ==================================================
+   SECCIÓN: Noticias
+   ================================================== */
+.noticias-section {
+    padding: 20px 15px;
+}
+
+.noticias-section h2 {
+    font-size: 1.8rem;
+    color: #e57000;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.noticias-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.noticias-section li {
+    background-color: rgba(102, 99, 99, 0.5);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    border-left: 4px solid #e57000;
+    color: #fff;
+    line-height: 1.5;
+    transition: background-color 0.3s;
+}
+
+.noticias-section li:hover {
+    background-color: rgba(122, 121, 121, 0.65);
+}
+
+.noticias-section li strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95em;
+    color: #fffb;
+}
+
+/* ==================================================
+    SECCIÓN: Contacto
+   ================================================== */
+.contacto-section {
+    padding: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+.contacto-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: #e57000;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.contacto-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacto-section label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.contacto-section input,
+.contacto-section textarea {
+    padding: 10px;
+    margin-top: 6px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.contacto-section textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contacto-section button {
+    align-self: flex-start;
+    padding: 12px 24px;
+    background-color: #e57000;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contacto-section button:hover {
+    background-color: #c75f00;
+}
+
+/* ==================================================
+   GALERÍA DE SERVICIOS
+   ================================================== */
+.image-gallery {
+    padding: 15px 10px 30px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    background-color: #e57000;
+    color: white;
+    transform: translateY(-4px);
+}
+
+.card:hover h3 {
+    color: white;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 12px 0 10px;
+    font-size: 18px;
+    color: #e57000;
+    font-weight: 700;
+}
+
+/* Enlace general para tarjetas */
+.a1 {
+    text-decoration: none;
+}
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+.footer-corporativo {
+    background-color: #f9f9f9;
+    padding: 28px 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-top-redes p {
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.social-icons a img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: translateY(-6px);
+}
+
+.footer-main {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #e57000;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #444;
+    transition: color 0.25s ease;
+    font-weight: 600;
+}
+
+.footer-column ul li a:hover {
+    color: #e57000;
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 15px;
+    background-color: #f5f5f5;
+    color: #333;
+    gap: 18px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a {
+    color: #e57000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* ==================================================
+        MEDIA QUERY DESKTOP (min-width: 768px)
+   ================================================== */
+@media (min-width: 768px) {
+    header {
+        padding: 15px 40px;
+    }
+
+    .menu-toggle-label {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        max-height: none !important;
+        box-shadow: none;
+        background: none;
+        width: auto;
+    }
+
+    .menu-items {
+        display: flex;
+        gap: 28px;
+    }
+
+    .menu-items li {
+        border: none;
+    }
+
+    .menu-items li a {
+        padding: 10px 0;
+        font-size: 16px;
+        color: #444;
+    }
+
+    .menu-items li a:hover {
+        background: none;
+        color: #e57000;
+        border-radius: 0;
+    }
+
+    .menu-items li a img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+
+    main {
+        padding: 40px 80px;
+        text-align: left;
+        min-height: 95vh;
+    }
+
+    .noticias-section {
+        padding: 32px 24px;
+    }
+
+    .noticias-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .noticias-section li {
+        padding: 18px 20px;
+        margin-bottom: 20px;
+    }
+
+    .contacto-section {
+        padding: 32px;
+    }
+
+    .contacto-section h2 {
+        font-size: 2.4rem;
+    }
+
+    .contacto-section input,
+    .contacto-section textarea {
+        font-size: 1.1rem;
+    }
+
+    .contacto-section button {
+        font-size: 1.05rem;
+    }
+
+    .cards-container {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .card {
+        width: calc(33.333% - 20px);
+    }
+
+    .footer-main {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}

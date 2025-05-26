@@ -1,0 +1,106 @@
+/* ===== RESETEO GENERAL ===== */
+* {
+    box-sizing: border-box; /* Hace que el padding y border no aumenten el tamaño total del elemento */
+}
+
+/* ===== ESTILO GLOBAL DEL BODY ===== */
+body {
+    margin: 0; /* Elimina márgenes por defecto del navegador */
+    padding: 20px; /* Espaciado interno general */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente legible y moderna */
+    background: #f7f9fc; /* Color de fondo suave y profesional */
+    color: #333; /* Color de texto gris oscuro */
+    display: flex; /* Activa el modelo flex para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: flex-start; /* Alinea el contenido al inicio del eje vertical */
+    min-height: 100vh; /* Ocupa toda la altura visible de la ventana */
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+main {
+    background: white; /* Fondo blanco limpio */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 25px 30px; /* Espaciado interno */
+    max-width: 500px; /* Ancho máximo del contenedor */
+    width: 100%; /* Se adapta al ancho del padre */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+}
+
+/* ===== TÍTULO ===== */
+h2 {
+    color: #ff9100; /* Naranja vibrante para destacar el título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    text-align: center; /* Centrado horizontal */
+}
+
+/* ===== FORMULARIO ===== */
+form {
+    display: flex; /* Flexbox para alinear elementos del formulario */
+    flex-direction: column; /* Los hijos se apilan en columna */
+}
+
+/* ===== ETIQUETAS ===== */
+label {
+    font-weight: 600; /* Texto en semi-negrita */
+    margin-bottom: 6px; /* Espacio entre la etiqueta y el input */
+}
+
+/* ===== CAMPOS DE ENTRADA ===== */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+    padding: 10px; /* Espacio interno */
+    margin-bottom: 15px; /* Separación entre campos */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    font-size: 1rem; /* Tamaño de fuente estándar */
+    resize: vertical; /* Permite redimensionar solo verticalmente */
+    font-family: inherit; /* Usa la misma fuente que el contenedor */
+}
+
+/* ===== ÁREA DE TEXTO ===== */
+textarea {
+    min-height: 80px; /* Altura mínima para comodidad del usuario */
+}
+
+/* ===== GRUPO DE RADIO BUTTONS (Modalidad) ===== */
+.modalidad {
+    margin-bottom: 15px; /* Espaciado con respecto al siguiente elemento */
+    display: flex; /* Flexbox para los radios */
+    gap: 20px; /* Espacio entre cada opción */
+    align-items: center; /* Centra verticalmente los radios con el texto */
+}
+
+.modalidad label {
+    font-weight: normal; /* Fuente regular */
+    display: flex; /* Muestra ícono y texto en línea */
+    align-items: center; /* Centrado vertical */
+    gap: 6px; /* Espacio entre input y texto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* ===== BOTÓN DE ENVÍO ===== */
+button {
+    background-color: #ff9100; /* Color naranja llamativo */
+    color: white; /* Texto blanco para contraste */
+    border: none; /* Elimina borde */
+    padding: 12px; /* Espaciado interno */
+    border-radius: 6px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo botón */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: 600; /* Negrita ligera para destacar */
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color al interactuar */
+    margin-top: 10px; /* Separación superior del botón respecto al formulario */
+}
+
+/* ===== EFECTO HOVER Y FOCUS DEL BOTÓN ===== */
+button:hover,
+button:focus {
+    background-color: #4784e6; /* Cambia a azul al pasar el mouse o enfocar */
+    outline: none; /* Quita el contorno por defecto del navegador */
+}
+

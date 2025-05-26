@@ -1,0 +1,118 @@
+/* === ESTILO GLOBAL DEL BODY === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+    background: #f7f9fc; /* Color de fondo claro y neutro */
+    margin: 0; /* Elimina los márgenes por defecto del navegador */
+    padding: 20px; /* Espaciado interno general */
+    height: 100vh; /* Ocupa toda la altura visible de la pantalla */
+    display: flex; /* Activa el modelo de caja flexible */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+/* === CONTENEDOR PRINCIPAL (main) === */
+main {
+    background: white; /* Fondo blanco para contraste */
+    padding: 20px; /* Espaciado interno menor para móvil */
+    border-radius: 8px; /* Bordes redondeados para suavidad visual */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra sutil para dar profundidad */
+    width: 100%; /* Se adapta al ancho del contenedor padre */
+    max-width: 320px; /* Ancho máximo para móviles */
+    text-align: center; /* Centra el texto dentro de este bloque */
+}
+
+/* === TÍTULO PRINCIPAL === */
+h1 {
+    color: #ff9100; /* Color naranja destacado */
+    margin-bottom: 20px; /* Separación inferior respecto al siguiente elemento */
+    font-size: 1.5rem; /* Tamaño para móvil */
+}
+
+/* === CONTENEDOR DE OPCIONES (agrupa todos los botones) === */
+.options {
+    display: flex; /* Flexbox para distribución */
+    flex-direction: column; /* En móvil: columnas para que las opciones apilen */
+    gap: 20px; /* Espacio entre opciones */
+    justify-content: center;
+    align-items: center;
+}
+
+/* === ESTILO DE CADA OPCIÓN === */
+.option {
+    background: #ff9100; /* Fondo naranja brillante por defecto */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de mano para indicar que es interactivo */
+    user-select: none; /* Evita que el texto sea seleccionado accidentalmente */
+    border: 2px solid transparent; /* Para efecto hover sin salto */
+    display: flex; /* Flexbox interno */
+    flex-direction: column; /* Apila el contenido verticalmente */
+    align-items: center; /* Centra contenido horizontalmente */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho */
+    text-decoration: none; /* Elimina subrayado si es un enlace */
+    color: inherit; /* Hereda el color del texto */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animaciones suaves */
+    width: 100%; /* Ocupa todo el ancho en móvil */
+    max-width: 280px; /* Máximo ancho para móviles */
+}
+
+/* === EFECTOS AL PASAR EL MOUSE O ENFOCAR LA OPCIÓN === */
+.option:hover,
+.option:focus {
+    background: #4784e6; /* Cambia a azul moderno */
+    color: white; /* Texto blanco para contraste */
+    transform: scale(1.05); /* Zoom ligero */
+    outline: none; /* Sin contorno predeterminado */
+    border-color: #4784e6; /* Resalta borde */
+}
+
+/* === IMAGEN DENTRO DE CADA OPCIÓN === */
+.option img {
+    width: 100px; /* Más pequeña en móvil */
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+/* === TEXTO DE CADA OPCIÓN (debajo de la imagen) === */
+.option span {
+    margin-top: 10px; /* Menos espacio en móvil */
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* ===== MEDIA QUERY PARA TABLETS Y ESCRITORIOS ===== */
+@media (min-width: 600px) {
+    main {
+        max-width: 600px;
+        padding: 30px 40px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .options {
+        flex-direction: row; /* En pantallas mayores las opciones van en fila */
+        gap: 40px; /* Más espacio entre opciones */
+    }
+
+    .option {
+        width: 250px; /* Ancho fijo para cada opción en escritorio */
+        padding: 20px;
+    }
+
+    .option img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .option span {
+        margin-top: 15px;
+        font-size: 1.2rem;
+    }
+}
+
+

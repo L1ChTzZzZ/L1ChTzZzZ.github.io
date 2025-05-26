@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario de Consulta</title>
+  <link rel="stylesheet" href="Cita.css" />
+  <link rel="icon" href="iconos/faviconpwc.png" type="image/x-icon" />
+</head>
+<body>
+  <main>
+    <h2>Formulario de Consulta</h2>
+    <form action="enviado_informe.html" method="get">
+      <!-- Texto de motivo -->
+      <label for="motivo">Motivo de la consulta (breve descripción)</label>
+      <textarea id="motivo" name="motivo" placeholder="Ej.: asesoría laboral, revisión de contrato" required></textarea>
+
+      <!-- Modalidad de cita: radio buttons -->
+      <fieldset class="modalidad">
+        <legend>Modalidad de la cita</legend>
+        <label>
+          <input type="radio" name="modalidad" value="presencial" required />
+          Presencial
+        </label>
+        <label>
+          <input type="radio" name="modalidad" value="virtual" />
+          Virtual (Zoom, Google Meet, etc.)
+        </label>
+      </fieldset>
+
+      <!-- Botón enviar -->
+      <button type="submit">Enviar Consulta</button>
+    </form>
+  </main>
+</body>
+</html>
+
